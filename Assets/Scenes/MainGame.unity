@@ -3021,10 +3021,10 @@ GameObject:
   m_Component:
   - component: {fileID: 443774348}
   - component: {fileID: 443774350}
-  - component: {fileID: 443774349}
-  - component: {fileID: 443774353}
   - component: {fileID: 443774352}
   - component: {fileID: 443774351}
+  - component: {fileID: 443774354}
+  - component: {fileID: 443774349}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3163,7 +3163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17995426, y: 0.21523325}
   m_EdgeRadius: 0
---- !u!114 &443774353
+--- !u!114 &443774354
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3462,6 +3462,8 @@ GameObject:
   - component: {fileID: 974524547}
   - component: {fileID: 974524549}
   - component: {fileID: 974524548}
+  - component: {fileID: 974524550}
+  - component: {fileID: 974524551}
   m_Layer: 0
   m_Name: Eagle
   m_TagString: Enemy
@@ -3552,6 +3554,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &974524550
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974524546}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.01}
+  serializedVersion: 2
+  m_Radius: 0.16313148
+--- !u!50 &974524551
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974524546}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1749731234
 GameObject:
   m_ObjectHideFlags: 0

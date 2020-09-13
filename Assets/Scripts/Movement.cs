@@ -9,36 +9,39 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 5f;
     public Animator animator;
     public GameObject player;
-    private Vector3 direction = new Vector3(0f, 0f, -1f);
     public bool isGrounded = false;
     public float yJump = 5f;
 
     void Update()
     {
-        Jump();
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         transform.position += movement * Time.deltaTime * moveSpeed;
-        if (movement.x > 0)
+        animator.SetFloat("Horizontal", movement.x);
+        if (movement.x < 0)
         {
-            player.transform.localScale -= direction;
-            animator.SetTrigger("Running");
+            animator.SetBool("IsMoving", true);
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        else if (movement.x < 0)
+        else if (movement.x > 0)
         {
-            player.transform.localScale += direction;
-            animator.SetTrigger("Running");
+            animator.SetBool("IsMoving", true);
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            animator.SetTrigger("PlayerIdle");
+            animator.SetBool("IsMoving", false);
         }
+        Jump();
     }
 
     void Jump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
+            animator.SetBool("isJumping", true);
+            animator.SetBool("IsMoving", false);
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, yJump), ForceMode2D.Impulse);
         }
+
     }
 }

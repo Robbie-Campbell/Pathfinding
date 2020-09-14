@@ -16,21 +16,28 @@ public class Movement : MonoBehaviour
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         transform.position += movement * Time.deltaTime * moveSpeed;
-        animator.SetFloat("Horizontal", movement.x);
+        
         if (movement.x < 0)
         {
-            animator.SetBool("IsMoving", true);
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         else if (movement.x > 0)
         {
-            animator.SetBool("IsMoving", true);
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        else
+        if (movement.x == 0)
         {
             animator.SetBool("IsMoving", false);
         }
+        else if (animator.GetBool("isJumping") == true)
+        {
+            animator.SetBool("IsMoving", false);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        
         Jump();
     }
 

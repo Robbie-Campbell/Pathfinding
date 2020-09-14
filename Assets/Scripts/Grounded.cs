@@ -16,7 +16,7 @@ public class Grounded : MonoBehaviour
         if (collision.collider.tag == "Ground")
         {
             player.GetComponent<Movement>().isGrounded = true;
-            player.GetComponent<Movement>().animator.SetBool("isJumping",false);
+            player.GetComponent<Movement>().animator.SetBool("isJumping", false);
         }
     }
 

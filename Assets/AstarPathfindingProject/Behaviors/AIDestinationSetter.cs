@@ -16,7 +16,14 @@ namespace Pathfinding {
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/// <summary>The object that the AI should move to</summary>
 		public Transform target;
+		GameObject player;
 		IAstarAI ai;
+
+		void Start()
+        {
+			player = GameObject.FindWithTag("Player");
+			target = player.transform;
+		}
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
@@ -33,7 +40,7 @@ namespace Pathfinding {
 
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
-			if (target != null && ai != null) ai.destination = target.position;
+			if (target.position != null && ai != null) ai.destination = target.position;
 		}
 	}
 }

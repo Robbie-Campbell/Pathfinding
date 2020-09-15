@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4355166363166644232}
   - component: {fileID: 4355166363166644233}
   - component: {fileID: 4355166363166644235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EagleGraphics
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 4355166364631376169}
   - component: {fileID: 4355166364631376170}
   - component: {fileID: -6942431159325923737}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 3.63
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

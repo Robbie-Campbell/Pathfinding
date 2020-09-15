@@ -1,6 +1,6 @@
 # Pathfinding
 
-![image](https://user-images.githubusercontent.com/56073739/93213428-bfca1d00-f75b-11ea-955a-d2f8fb8af9e6.png)
+![image](https://user-images.githubusercontent.com/56073739/93213827-43840980-f75c-11ea-9a05-7c7ab8aa4243.png)
 
 ## :sparkles: a 2d pathfinding project :sparkles:
  
